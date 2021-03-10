@@ -5,6 +5,22 @@
 let fs = require("fs");
 let cmds = process.argv.slice(2);
 
+if(cmds.includes("--help") || cmds.includes("-h")){
+    console.log();
+    console.log("File Organizer");
+    console.log("node index.js -s [Src Directory] -o [Output Directory]\n");
+    console.log("Options");
+    console.log("-s : To indicate source directory");
+    console.log("-o : To indicate output directory");
+    console.log("-m : To move files and remove source directory");
+    process.exit(0);
+}
+
+if(cmds.includes("--version") || cmds.includes("-v")){
+    console.log("File Organizer");
+    console.log("version 0.1");
+    process.exit(0);
+}
 
 let dirNames = cmds.slice(cmds.indexOf("-s") + 1,cmds.indexOf("-o"));
 let outputdirs = cmds.slice(cmds.indexOf("-o") + 1,cmds.length);
