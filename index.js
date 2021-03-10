@@ -105,7 +105,7 @@ function saveFileToType(root,path,outputdir,isToMove){
 
 
 function createDir(path){
-    fs.mkdir(path,(err)=>{
+    fs.mkdirSync(path,(err)=>{
         if(err) throw err;
         // console.log("Dir created : "+path);
     })
